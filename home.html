@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+     <!-- daisyui cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwindcss cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body class="bg-[#F4F5F7] h-[100vh]">
+
+    <nav class="flex justify-between items-center md:w-[70%] mx-auto p-3 bg-white">
+        <div class="flex items-center">
+            <img class="w-[40px] md:w-[80px]" src="assets/Group.png" alt="">
+            <div class="ml-2">
+                <h1 class="font-bold text-sm md:text-xl">$ <span>45000</span></h1>
+                <p class="text-gray-500 text-sm md:text-lg">Available Balance</p>
+            </div>
+        </div>
+
+        <div>
+            <button class="btn rounded-lg bg-transparent text-gray-500 border-1 border-gray-500"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-700"></i>Logout</button>
+        </div>
+    </nav>
+
+    
     
 </body>
 </html>
