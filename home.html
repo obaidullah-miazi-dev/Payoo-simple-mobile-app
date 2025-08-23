@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-     <!-- daisyui cdn  -->
+    <!-- daisyui cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- tailwindcss cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- font awesome cdn -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-[#F4F5F7] h-[100vh]">
+
+<body class="bg-[#F4F5F7] h-full">
 
     <nav class="flex justify-between items-center md:w-[70%] mx-auto p-3 bg-white border-b-2 border-gray-300">
         <div class="flex items-center">
             <img class="w-[40px] md:w-[80px]" src="assets/Group.png" alt="">
             <div class="ml-2">
-                <h1 class="font-bold text-sm md:text-xl">$ <span>45000</span></h1>
+                <h1 class="font-bold text-sm md:text-xl">$ <span id="available-balance">45000</span></h1>
                 <p class="text-gray-500 text-sm md:text-lg">Available Balance</p>
             </div>
         </div>
 
         <div>
-            <button class="btn rounded-lg bg-transparent text-gray-500 border-1 border-gray-500"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-700"></i>Logout</button>
+            <button class="btn rounded-lg bg-transparent text-gray-500 border-1 border-gray-500"><i
+                    class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-700"></i>Logout</button>
         </div>
     </nav>
 
@@ -33,45 +38,72 @@
         <div>
             <h1 class="md:text-5xl font-bold mb-3 md:mb-5 text-2xl">🔥 Welcome to Payooo!</h1>
             <p class="md:text-xl text-gray-500 pb-5 text-sm">
-                Enjoy easy and convenient financial services with us. Cashout charge is low and 
+                Enjoy easy and convenient financial services with us. Cashout charge is low and
             </p>
         </div>
 
 
         <div class="grid grid-rows-2 grid-cols-3 gap-3 md:gap-8">
             <!-- card 1 -->
-            <div class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
+            <div
+                class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
                 <img class="mx-auto" src="assets/wallet1.png" alt="">
                 <h2 class="text-center">Add Money</h2>
             </div>
             <!-- card 2 -->
-            <div class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
+            <div
+                class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
                 <img class="mx-auto" src="assets/send1.png" alt="">
                 <h2 class="text-center">Cashout</h2>
             </div>
             <!-- card 3 -->
-            <div class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
+            <div
+                class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
                 <img class="mx-auto" src="assets/money1.png" alt="">
                 <h2 class="text-center">Transfer Money</h2>
             </div>
             <!-- card 4 -->
-            <div class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
+            <div
+                class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
                 <img class="mx-auto" src="assets/bonus1.png" alt="">
                 <h2 class="text-center">Get Bonus</h2>
             </div>
             <!-- card 5 -->
-            <div class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
+            <div
+                class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
                 <img class="mx-auto" src="assets/purse1.png" alt="">
                 <h2 class="text-center">Pay Bill</h2>
             </div>
             <!-- card 6 -->
-            <div class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
+            <div
+                class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
                 <img class="mx-auto" src="assets/transaction1.png" alt="">
                 <h2 class="text-center">Transaction</h2>
             </div>
 
         </div>
     </section>
-    
+
+    <!-- add money form section  -->
+    <section class="md:w-[70%] mx-auto ">
+        <h1 class="mt-10 mb-5 font-bold text-2xl ml-2 md:ml-0">Add Money</h1>
+        <form class="bg-white pt-14 px-6 pb-5 rounded-t-xl">
+            <label class="font-semibold">Bank Account Number</label> <br>
+            <input id="account-number" type="text" placeholder="Enter 11 digit account number"
+                class="input mt-2 mb-5 w-full rounded-3xl border-none bg-[#F4F5F7] p-5" /> <br>
+            <label class="font-semibold">Amount to Add</label> <br>
+            <input id="amount" type="text" placeholder="Add Amount to withdraw"
+                class="input mt-2 mb-5 w-full rounded-3xl border-none bg-[#F4F5F7] p-5" /> <br>
+            <label class="font-semibold">4 Digit Pin</label> <br>
+            <input id="add-pin" type="text" placeholder="Enter Your 4 Digit Pin"
+                class="input mt-2 w-full rounded-3xl  bg-[#F4F5F7] border-none p-5" />
+            <br>
+            <button id="add-button"
+                class="btn bg-[#0874F2] hover:bg-[#1682fd] text-white mt-5 w-full rounded-3xl">Add Money</button>
+        </form>
+    </section>
+
+    <script src="home.js"></script>
 </body>
+
 </html>
