@@ -1,37 +1,37 @@
 // function to get number value from element
-function getNumberValue(id){
+function getNumberValue(id) {
     const elementNumberValue = parseInt(document.getElementById(id).value)
     return elementNumberValue;
 }
 
 // function to get Number from inner text 
-function getNumber(id){
+function getNumber(id) {
     const getNumberFromInnerText = parseInt(document.getElementById(id).innerText)
     return getNumberFromInnerText;
 }
 
 // function to get value from element 
-function getValue(id){
+function getValue(id) {
     const elementValue = document.getElementById(id).value
     return elementValue;
 }
 
 // function to set inner text (new available balance)
-function setInnerText(value){
+function setInnerText(value) {
     const availableBalanceElement = document.getElementById('available-balance').innerText = value
 
     return availableBalanceElement;
 }
 
 //funtion for toggling 
-function handleToggle(id){
-            const forms =document.getElementsByClassName('form')
+function handleToggle(id) {
+    const forms = document.getElementsByClassName('form')
 
-        for(const form of forms){
-            form.style.display='none'
-        }
+    for (const form of forms) {
+        form.style.display = 'none'
+    }
 
-        document.getElementById(id).style.display='block'
+    document.getElementById(id).style.display = 'block'
 }
 
 
@@ -159,6 +159,36 @@ document.getElementById('get-bonus-button')
     })
 
 
+//pay bill functionality
+document.getElementById('pay-button')
+    .addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const availableBalance = getNumber('available-balance')
+
+        const billerAccountNumber = getValue('biller-account-number')
+
+        const payAmount = getNumberValue('pay-amount')
+
+        const payPin = getValue('pay-pin')
+
+        if (billerAccountNumber.length !== 11) {
+            alert('please provide your valid account number')
+            return;
+        }
+
+        if (payPin.length !== 4) {
+            alert('please enter your valid 4 digit pin number')
+            return;
+        }
+
+
+
+
+        const totalNewAvailableBalance = availableBalance - payAmount
+
+        setInnerText(totalNewAvailableBalance)
+    })
 
 
 
@@ -183,7 +213,7 @@ document.getElementById('cash-out-card')
 
 document.getElementById('transfer-money-card')
     .addEventListener('click', function () {
-       handleToggle('transfer-money-section')
+        handleToggle('transfer-money-section')
     })
 
 
@@ -195,4 +225,8 @@ document.getElementById('get-bonus-card')
     })
 
 
-    
+// pay bill card click handler
+document.getElementById('pay-bill-card')
+    .addEventListener('click', function () {
+        handleToggle('pay-bill-section')
+    })
