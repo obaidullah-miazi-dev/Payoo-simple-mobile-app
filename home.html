@@ -57,7 +57,7 @@
                 <h2 class="text-center">Cashout</h2>
             </div>
             <!-- card 3 -->
-            <div
+            <div id="transfer-money-card"
                 class="border-2 border-gray-300 md:px-6 md:py-8 rounded-lg py-3 px-4 text-[10px] md:text-lg text-gray-500 font-semibold">
                 <img class="mx-auto" src="assets/money1.png" alt="">
                 <h2 class="text-center">Transfer Money</h2>
@@ -114,6 +114,7 @@
         </form>
     </section>
 
+
     <!-- cash out form section  -->
     <section style="display: none;" id="cash-out-section" class="md:w-[70%] mx-auto ">
         <h1 class="mt-10 mb-5 font-bold text-2xl ml-2 md:ml-0">Cash Out</h1>
@@ -130,6 +131,26 @@
                 class="input mt-2 w-full rounded-3xl  bg-[#F4F5F7] border-none p-5" />
             <br>
             <button id="cash-out-button" class="btn bg-[#0874F2] hover:bg-[#1682fd] text-white mt-5 w-full rounded-3xl">Cash Out</button>
+        </form>
+    </section>
+
+    
+    <!-- transfer money form section  -->
+    <section style="display: none;" id="transfer-money-section" class="md:w-[70%] mx-auto ">
+        <h1 class="mt-10 mb-5 font-bold text-2xl ml-2 md:ml-0">Transfer Money</h1>
+        <form class="bg-white pt-14 px-6 pb-5 rounded-t-xl">
+
+            <label class="font-semibold">User Account Number</label> <br>
+            <input id="user-number" type="text" placeholder="Enter 11 digit user account number"
+                class="input mt-2 mb-5 w-full rounded-3xl border-none bg-[#F4F5F7] p-5" /> <br>
+            <label class="font-semibold">Amount to Transfer</label> <br>
+            <input id="transfer-amount" type="text" placeholder="Enter Amount to Transfer"
+                class="input mt-2 mb-5 w-full rounded-3xl border-none bg-[#F4F5F7] p-5" /> <br>
+            <label class="font-semibold">4 Digit Pin</label> <br>
+            <input id="transfer-money-pin" type="text" placeholder="Enter Your 4 Digit Pin"
+                class="input mt-2 w-full rounded-3xl  bg-[#F4F5F7] border-none p-5" />
+            <br>
+            <button id="transfer-money-button" class="btn bg-[#0874F2] hover:bg-[#1682fd] text-white mt-5 w-full rounded-3xl">Send Now</button>
         </form>
     </section>
 

@@ -62,6 +62,36 @@ document.getElementById('cash-out-button')
     })
 
 
+// transfer money functionality 
+document.getElementById('transfer-money-button')
+    .addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const availableBalance = parseInt(document.getElementById('available-balance').innerText)
+
+        const userNumber = document.getElementById('user-number').value
+
+        const transferAmount = parseInt(document.getElementById('transfer-amount').value)
+
+        const transferMoneyPin = document.getElementById('transfer-money-pin').value
+
+        if (userNumber.length !== 11) {
+            alert('please provide your 11 digit user number')
+            return;
+        }
+
+        if (transferMoneyPin.length !== 4) {
+            alert('please provide your valid 4 digit pin')
+            return;
+        }
+
+        const totalNewAvailableBalance = availableBalance - transferAmount
+
+        document.getElementById('available-balance').innerText = totalNewAvailableBalance;
+
+    })
+
+
 
 
 
@@ -75,6 +105,7 @@ document.getElementById('cash-out-button')
 document.getElementById('add-money-card')
     .addEventListener('click', function () {
         document.getElementById('cash-out-section').style.display = 'none';
+        document.getElementById('transfer-money-section').style.display = 'none';
         document.getElementById('add-money-section').style.display = 'block';
     })
 
@@ -83,5 +114,16 @@ document.getElementById('add-money-card')
 document.getElementById('cash-out-card')
     .addEventListener('click', function () {
         document.getElementById('add-money-section').style.display = 'none';
+        document.getElementById('transfer-money-section').style.display = 'none';
         document.getElementById('cash-out-section').style.display = 'block';
+    })
+
+
+// transfer money card click handler 
+
+document.getElementById('transfer-money-card')
+    .addEventListener('click', function () {
+        document.getElementById('add-money-section').style.display = 'none';
+        document.getElementById('cash-out-section').style.display = 'none';
+        document.getElementById('transfer-money-section').style.display = 'block';
     })

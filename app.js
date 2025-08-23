@@ -7,7 +7,7 @@ document.getElementById('login-btn')
     const pinNumber = document.getElementById('pin-number').value
     
 
-    if(mobileNumber.length !== 11 && !isNaN(mobileNumber) && pinNumber.length !== 4 && !isNaN(pinNumber)){
+    if(mobileNumber.length === 11 && !isNaN(mobileNumber) && pinNumber.length === 4 && !isNaN(pinNumber)){
        window.location.href="./home.html"
     }
 
