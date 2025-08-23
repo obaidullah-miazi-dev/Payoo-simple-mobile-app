@@ -28,3 +28,30 @@ document.getElementById('add-button')
 
         document.getElementById('available-balance').innerText = totalNewAvailableBalance;
     })
+
+
+
+
+
+
+
+    
+
+
+    // toggling feature 
+
+
+    // add money card click handler
+    document.getElementById('add-money-card')
+    .addEventListener('click',function(){
+        document.getElementById('cash-out-section').style.display = 'none';
+        document.getElementById('add-money-section').style.display = 'block';
+    })
+
+
+    // cash out card click handler
+    document.getElementById('cash-out-card')
+    .addEventListener('click',function(){
+        document.getElementById('add-money-section').style.display = 'none';
+        document.getElementById('cash-out-section').style.display = 'block';
+    })
