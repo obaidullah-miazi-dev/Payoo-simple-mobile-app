@@ -1,3 +1,4 @@
+//add money functionality
 document.getElementById('add-button')
     .addEventListener('click', function (e) {
         e.preventDefault();
@@ -14,7 +15,7 @@ document.getElementById('add-button')
 
         const addPin = document.getElementById('add-pin').value
 
-        if (accountNumber.length < 11) {
+        if (accountNumber.length !== 11) {
             alert('please provide your valid account number')
             return;
         }
@@ -30,28 +31,57 @@ document.getElementById('add-button')
     })
 
 
+// cash out functionality
+document.getElementById('cash-out-button')
+    .addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const availableBalance = parseInt(document.getElementById('available-balance').innerText)
+
+        const agentNumber = document.getElementById('agent-number').value
+
+        const cashoutAmount = parseInt(document.getElementById('cashout-amount').value)
+
+        const cashoutPin = document.getElementById('cash-out-pin').value
+
+        if (agentNumber.length !== 11) {
+            alert('please provide your 11 digit agent number')
+            return;
+        }
+
+        if (cashoutPin.length !== 4) {
+            alert('please provide your valid 4 digit pin')
+            return;
+        }
+
+        const totalNewAvailableBalance = availableBalance - cashoutAmount;
+
+        document.getElementById('available-balance').innerText = totalNewAvailableBalance
+
+
+    })
 
 
 
 
 
-    
 
 
-    // toggling feature 
+
+// toggling feature 
 
 
-    // add money card click handler
-    document.getElementById('add-money-card')
-    .addEventListener('click',function(){
+// add money card click handler
+document.getElementById('add-money-card')
+    .addEventListener('click', function () {
         document.getElementById('cash-out-section').style.display = 'none';
         document.getElementById('add-money-section').style.display = 'block';
     })
 
 
-    // cash out card click handler
-    document.getElementById('cash-out-card')
-    .addEventListener('click',function(){
+// cash out card click handler
+document.getElementById('cash-out-card')
+    .addEventListener('click', function () {
         document.getElementById('add-money-section').style.display = 'none';
         document.getElementById('cash-out-section').style.display = 'block';
     })
