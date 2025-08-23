@@ -1,15 +1,30 @@
 document.getElementById('add-button')
-.addEventListener('click',function(e){
-    e.preventDefault();
-    const availableBalance = parseInt(document.getElementById('available-balance').innerText)
-    
-    const accountNumber = document.getElementById('account-number').value
+    .addEventListener('click', function (e) {
+        e.preventDefault();
 
-    const amount = parseInt(document.getElementById('amount').value)
 
-    const addPin = document.getElementById('add-pin').value 
+        const availableBalance = parseInt(document.getElementById('available-balance').innerText)
 
-    const totalNewAvailableBalance = availableBalance+amount
+        const selectBank = document.getElementById('select-bank').value
 
-    document.getElementById('available-balance').innerText= totalNewAvailableBalance;
-})
+
+        const accountNumber = document.getElementById('account-number').value
+
+        const amount = parseInt(document.getElementById('amount').value)
+
+        const addPin = document.getElementById('add-pin').value
+
+        if (accountNumber.length < 11) {
+            alert('please provide your valid account number')
+            return;
+        }
+
+        if (addPin.length !== 4) {
+            alert('please enter your valid 4 digit pin number')
+            return;
+        }
+
+        const totalNewAvailableBalance = availableBalance + amount
+
+        document.getElementById('available-balance').innerText = totalNewAvailableBalance;
+    })

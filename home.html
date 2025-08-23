@@ -85,9 +85,20 @@
     </section>
 
     <!-- add money form section  -->
-    <section class="md:w-[70%] mx-auto ">
+    <section id="add-money-section" class="md:w-[70%] mx-auto ">
         <h1 class="mt-10 mb-5 font-bold text-2xl ml-2 md:ml-0">Add Money</h1>
         <form class="bg-white pt-14 px-6 pb-5 rounded-t-xl">
+
+            <label class="font-semibold">Select A Bank</label> <br>
+            <select id="select-bank" class="select mb-5 w-full rounded-3xl border-none bg-[#F4F5F7]  text-black mt-3">
+                <option disabled selected>Select Bank</option>
+                <option>Islami Bank</option>
+                <option>Dutch Bangla Bank</option>
+                <option>AB Bank</option>
+            </select>
+
+            <br>
+
             <label class="font-semibold">Bank Account Number</label> <br>
             <input id="account-number" type="text" placeholder="Enter 11 digit account number"
                 class="input mt-2 mb-5 w-full rounded-3xl border-none bg-[#F4F5F7] p-5" /> <br>
@@ -98,8 +109,8 @@
             <input id="add-pin" type="text" placeholder="Enter Your 4 Digit Pin"
                 class="input mt-2 w-full rounded-3xl  bg-[#F4F5F7] border-none p-5" />
             <br>
-            <button id="add-button"
-                class="btn bg-[#0874F2] hover:bg-[#1682fd] text-white mt-5 w-full rounded-3xl">Add Money</button>
+            <button id="add-button" class="btn bg-[#0874F2] hover:bg-[#1682fd] text-white mt-5 w-full rounded-3xl">Add
+                Money</button>
         </form>
     </section>
 
