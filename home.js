@@ -54,6 +54,11 @@ document.getElementById('cash-out-button')
             return;
         }
 
+        if (cashoutAmount > availableBalance) {
+            alert('Insufficient balance! You cannot cashout more than your available balance.');
+            return;
+        }
+
         const totalNewAvailableBalance = availableBalance - cashoutAmount;
 
         document.getElementById('available-balance').innerText = totalNewAvailableBalance
@@ -85,6 +90,11 @@ document.getElementById('transfer-money-button')
             return;
         }
 
+        if (transferAmount > availableBalance) {
+            alert('Insufficient balance! You cannot transfer more than your available balance.');
+            return;
+        }
+
         const totalNewAvailableBalance = availableBalance - transferAmount
 
         document.getElementById('available-balance').innerText = totalNewAvailableBalance;
@@ -92,7 +102,24 @@ document.getElementById('transfer-money-button')
     })
 
 
+// get bonus functionality 
+document.getElementById('get-bonus-button')
+    .addEventListener('click', function (e) {
+        e.preventDefault()
+        const availableBalance = parseInt(document.getElementById('available-balance').innerText)
 
+        const copunCode = document.getElementById('coupon-code').value
+
+        if (copunCode === 'payoo500') {
+            const newBalance = availableBalance - 500
+            document.getElementById('available-balance').innerText = newBalance;
+        }
+
+        else {
+            alert('invalid copun code')
+        }
+
+    })
 
 
 
@@ -106,6 +133,7 @@ document.getElementById('add-money-card')
     .addEventListener('click', function () {
         document.getElementById('cash-out-section').style.display = 'none';
         document.getElementById('transfer-money-section').style.display = 'none';
+        document.getElementById('get-bonus-section').style.display = 'none';
         document.getElementById('add-money-section').style.display = 'block';
     })
 
@@ -115,6 +143,7 @@ document.getElementById('cash-out-card')
     .addEventListener('click', function () {
         document.getElementById('add-money-section').style.display = 'none';
         document.getElementById('transfer-money-section').style.display = 'none';
+        document.getElementById('get-bonus-section').style.display = 'none';
         document.getElementById('cash-out-section').style.display = 'block';
     })
 
@@ -125,5 +154,17 @@ document.getElementById('transfer-money-card')
     .addEventListener('click', function () {
         document.getElementById('add-money-section').style.display = 'none';
         document.getElementById('cash-out-section').style.display = 'none';
+        document.getElementById('get-bonus-section').style.display = 'none';
         document.getElementById('transfer-money-section').style.display = 'block';
+    })
+
+
+// get bonus card click handler
+
+document.getElementById('get-bonus-card')
+    .addEventListener('click', function () {
+        document.getElementById('add-money-section').style.display = 'none';
+        document.getElementById('cash-out-section').style.display = 'none';
+        document.getElementById('transfer-money-section').style.display = 'none';
+        document.getElementById('get-bonus-section').style.display = 'block';
     })
