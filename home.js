@@ -35,6 +35,22 @@ function handleToggle(id) {
 }
 
 
+
+// function to toggle active btn
+function activeBtn(id) {
+    const activeBtn = document.getElementsByClassName('active-btn')
+
+    for (const btn of activeBtn) {
+        btn.classList.remove('border-[#0874F2]', 'bg-[#0875f20c]')
+        btn.classList.add('border-gray-300')
+    }
+
+    document.getElementById(id).classList.remove('border-gray-300')
+    document.getElementById(id).classList.add('border-[#0874F2]', 'bg-[#0875f20c]')
+}
+
+
+
 //add money functionality
 document.getElementById('add-button')
     .addEventListener('click', function (e) {
@@ -199,6 +215,7 @@ document.getElementById('pay-button')
 document.getElementById('add-money-card')
     .addEventListener('click', function () {
         handleToggle('add-money-section')
+        activeBtn('add-money-card')
     })
 
 
@@ -206,6 +223,7 @@ document.getElementById('add-money-card')
 document.getElementById('cash-out-card')
     .addEventListener('click', function () {
         handleToggle('cash-out-section')
+        activeBtn('cash-out-card')
     })
 
 
@@ -214,6 +232,7 @@ document.getElementById('cash-out-card')
 document.getElementById('transfer-money-card')
     .addEventListener('click', function () {
         handleToggle('transfer-money-section')
+        activeBtn('transfer-money-card')
     })
 
 
@@ -222,6 +241,7 @@ document.getElementById('transfer-money-card')
 document.getElementById('get-bonus-card')
     .addEventListener('click', function () {
         handleToggle('get-bonus-section')
+        activeBtn('get-bonus-card')
     })
 
 
@@ -229,4 +249,5 @@ document.getElementById('get-bonus-card')
 document.getElementById('pay-bill-card')
     .addEventListener('click', function () {
         handleToggle('pay-bill-section')
+        activeBtn('pay-bill-card')
     })
