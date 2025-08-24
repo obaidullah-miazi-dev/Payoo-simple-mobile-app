@@ -1,3 +1,5 @@
+const transactionData = [];
+
 // function to get number value from element
 function getNumberValue(id) {
     const elementNumberValue = parseInt(document.getElementById(id).value)
@@ -81,6 +83,13 @@ document.getElementById('add-button')
         const totalNewAvailableBalance = availableBalance + amount
 
         setInnerText(totalNewAvailableBalance)
+
+        const data = {
+            name: 'Add Money',
+            date: new Date().toLocaleString()
+        }
+
+        transactionData.push(data)
     })
 
 
@@ -115,6 +124,13 @@ document.getElementById('cash-out-button')
         const totalNewAvailableBalance = availableBalance - cashoutAmount;
 
         setInnerText(totalNewAvailableBalance)
+
+        const data = {
+            name: 'Cash Out',
+            date: new Date().toLocaleString()
+        }
+
+        transactionData.push(data)
 
 
     })
@@ -152,6 +168,13 @@ document.getElementById('transfer-money-button')
 
         setInnerText(totalNewAvailableBalance)
 
+        const data = {
+            name: 'Transfer Money',
+            date: new Date().toLocaleString()
+        }
+
+        transactionData.push(data)
+
     })
 
 
@@ -171,6 +194,13 @@ document.getElementById('get-bonus-button')
         else {
             alert('invalid copun code')
         }
+
+        const data = {
+            name: 'Add Bonus',
+            date: new Date().toLocaleString()
+        }
+
+        transactionData.push(data)
 
     })
 
@@ -204,6 +234,40 @@ document.getElementById('pay-button')
         const totalNewAvailableBalance = availableBalance - payAmount
 
         setInnerText(totalNewAvailableBalance)
+
+        const data = {
+            name: 'Pay Bill',
+            date: new Date().toLocaleString()
+        }
+
+        transactionData.push(data)
+    })
+
+
+// transaction history functionality
+document.getElementById('transaction-card')
+    .addEventListener('click', function () {
+        const transactionContainer = document.getElementById('transaction-container')
+
+        transactionContainer.innerHTML=''
+
+        for (const data of transactionData) {
+            const div = document.createElement("div")
+            div.innerHTML =`<div class="bg-white p-3 rounded-xl flex justify-between items-center mb-3">
+                <div class=" flex gap-5">
+                    <div class="bg-[#F4F5F7] rounded-full p-3">
+                        <img src="assets/wallet1.png" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">${data.name}</h3>
+                        <p class="text-gray-500">${data.date}</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>`;
+
+            transactionContainer.appendChild(div)
+        }
     })
 
 
@@ -250,4 +314,12 @@ document.getElementById('pay-bill-card')
     .addEventListener('click', function () {
         handleToggle('pay-bill-section')
         activeBtn('pay-bill-card')
+    })
+
+
+// transaction card click handler
+document.getElementById('transaction-card')
+    .addEventListener('click', function () {
+        handleToggle('transaction-section')
+        activeBtn('transaction-card')
     })
