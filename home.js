@@ -271,6 +271,12 @@ document.getElementById('transaction-card')
     })
 
 
+// logout btn functionality
+document.getElementById('logout-btn')
+.addEventListener('click',function(){
+    window.location.href="./index.html"
+})
+
 
 // toggling feature 
 
