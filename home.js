@@ -132,6 +132,8 @@ document.getElementById('cash-out-button')
 
         transactionData.push(data)
 
+        
+
 
     })
 
